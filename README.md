@@ -14,6 +14,7 @@ A starter template to develop micro API with Lumen 8.
 - Start the development server with `make up`.
 - Migrating database schema: `make migrate`, error? `make migrate-revert`
 
+The nginx server will be available at 8080 port for serving request
 ### Debugging
 
 - SSH into the app container: `make ssh`
@@ -27,6 +28,25 @@ A starter template to develop micro API with Lumen 8.
 ### Exit
 
 - Exit from app container with `CTRL+C` or `exit`.
+
+### Health-checking
+
+```shell
+curl http://127.0.0.1:8080
+```
+
+should return
+```shell
+{
+  "name":"Lumen",
+  "version":"0.0.1",
+  "framework":"Lumen (8.2.4) (Laravel Components ^8.0)",
+  "environment":"local",
+  "debug_mode":false,
+  "timestamp":"2021-11-01 01:25:39","timezone":"UTC"
+}
+```
+if the service is up and running
 
 ### Create new wager
 
