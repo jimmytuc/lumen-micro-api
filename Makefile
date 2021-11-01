@@ -15,6 +15,9 @@ stop: ## Stop all Docker services
 down: ## Down all Docker services
 	@docker-compose down
 
+config: ## Make a configuration for laravel app
+	@docker-compose run --rm app sh -c "cp .env.example .env"
+
 migrate: ## Run the migration
 	@docker-compose run --rm app sh -c "php artisan migrate"
 
