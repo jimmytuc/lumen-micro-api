@@ -1,13 +1,6 @@
-# Lumen API
+# Lumen Micro API
 
 A starter template to develop micro API with Lumen 8.
-
-### Included Packages
-
-- [flipbox/lumen-generator@^8.0](https://github.com/flipboxstudio/lumen-generator)
-- [fruitcake/laravel-cors@^2.0](https://github.com/fruitcake/laravel-cors)
-- [spatie/laravel-fractal@^5.8](https://github.com/spatie/laravel-fractal)
-- [spatie/laravel-query-builder@^3.6](https://github.com/spatie/laravel-query-builder)
 
 ### Configuration
 
@@ -16,17 +9,24 @@ A starter template to develop micro API with Lumen 8.
 
 ### Installation
 
-- Clone the Repo:
-    - `git clone git@github.com:munza/lumen-api-starter.git`
-    - `git clone https://github.com/munza/lumen-api-starter.git`
-- `cd lumen-micro-api`
+- Clone the repo: `git clone git@github.com:jimmytuc/lumen-micro-api.git`
+- Then: `cd lumen-micro-api`
+- Start the development server with `make up`.
 - Migrating database schema: `make migrate`, error? `make migrate-rollback`
+
+### Debugging
+
 - SSH into the app container: `make ssh`
 - Generate new key: `make ssh`, then `php artisan key:generate`
-- Exit from app container with `CTRL+C` or `exit`.
-- Start the local development server with `make up`.
-- Run unit tests: `make test`
+
+### Unit testing
+
+- Run some unit tests: `make test`
 - Run `make` to see available commands.
+
+### Exit
+
+- Exit from app container with `CTRL+C` or `exit`.
 
 ### Create new wager
 
