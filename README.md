@@ -12,7 +12,7 @@ A starter template to develop micro API with Lumen 8.
 - Clone the repo: `git clone git@github.com:jimmytuc/lumen-micro-api.git`
 - Then: `cd lumen-micro-api`
 - Start the development server with `make up`.
-- Migrating database schema: `make migrate`, error? `make migrate-rollback`
+- Migrating database schema: `make migrate`, error? `make migrate-revert`
 
 ### Debugging
 
@@ -30,6 +30,14 @@ A starter template to develop micro API with Lumen 8.
 
 ### Create new wager
 
+- `total_wager_value` must be specified as a positive integer above 0
+- `odds` must be specified as a positive integer above 0
+- `selling_percentage` must be specified as an integer between 1 and 100
+- `selling_price` must be specified as a positive decimal value to two decimal places, it is a monetary value
+- `selling_price` must be greater than total_wager_value * (selling_percentage / 100)
+
+For an example:
+
 ```shell
 curl --request POST 'http://127.0.0.1:8080/wagers' \
     --header 'Content-Type: application/json' \
@@ -43,6 +51,11 @@ curl --request POST 'http://127.0.0.1:8080/wagers' \
 
 ### Buying
 
+- `buying_price` should be an positive decimal value
+- `buying_price` must be lesser or equal to `current_selling_price` of the `wager_id`
+- A successful purchase should update the wager fields `current_selling_price`, `percentage_sold`, `amount_sold`
+
+For an example:
 - `<wager_id>`: Specify your correct wager id
 
 ```shell
