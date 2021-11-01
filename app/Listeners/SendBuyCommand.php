@@ -33,13 +33,11 @@ class SendBuyCommand
         $currentSellingPrice = $wagerCollection->current_selling_price;
         $amountSold = $wagerCollection->amount_sold ?? 0;
 
-        $result = $event->buy->wager()->update([
+        $event->buy->wager()->update([
             'current_selling_price' => floatval($currentSellingPrice - $buyingPrice),
             'percentage_sold' => floatval($buyingPrice * 100 / $sellingPrice),
             'amount_sold' => floatval($amountSold + $buyingPrice),
         ]);
-
-        print($result);
 
         $event->buy->bought_at = Carbon::now()->toDateTimeString();
         $event->buy->save();

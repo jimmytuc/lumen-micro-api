@@ -26,7 +26,7 @@ class BuyController extends Controller
     }
 
     /**
-     * Create a wager.
+     * send out a buy command
      *
      * @param Request $request
      * @param int $id
