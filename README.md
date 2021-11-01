@@ -61,7 +61,8 @@ curl --request GET 'http://127.0.0.1:8080/wagers' \
 ```
 
 Default returns 10 results and the first page.
-Specifying the page and number of results you want to return (but not more than 50):
+
+Specifying the page and number of results you want to return (but not more than 50, otherwise it will keep the maximum results at 50):
 
 ```shell
 curl --request GET 'http://127.0.0.1:8080/wagers?page=<page>&limit=<limit>' \
