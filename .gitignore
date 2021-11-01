@@ -1,0 +1,4 @@
+/vendor
+/.idea
+docker-compose.override.yml
+.phpunit.result.cache
