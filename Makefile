@@ -30,5 +30,11 @@ ssh: ## SSH into docker container app
 composer: ## SSH into a docker container composer
 	@docker run --rm -it -v $(PWD):/app composer:2 sh
 
+composer-install: ## SSH into a docker container composer and install deps
+	@docker run --rm -it -v $(PWD):/app composer:2 sh -c "composer install"
+
+composer-update: ## SSH into a docker container composer and update deps version
+	@docker run --rm -it -v $(PWD):/app composer:2 sh -c "composer update"
+
 test: ## Run some PHPUnit tests
 	@docker-compose run --rm app vendor/bin/phpunit

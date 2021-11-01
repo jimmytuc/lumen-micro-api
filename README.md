@@ -12,6 +12,7 @@ A starter template to develop micro API with Lumen 8.
 - Clone the repo: `git clone git@github.com:jimmytuc/lumen-micro-api.git`
 - Then: `cd lumen-micro-api`
 - Start the development server with `make up`.
+- When you have changed `composer.json` or want to install extra dependencies: `make composer-install` | `make composer-update`
 - Migrating database schema: `make migrate`, error? `make migrate-revert`
 
 The nginx server will be available at 8080 port for serving request
