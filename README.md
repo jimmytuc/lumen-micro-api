@@ -2,6 +2,17 @@
 
 A starter template to develop micro API with Lumen 8.
 
+## Start the restful service:
+
+- `chmod +x start.sh`
+- `start.sh`
+
+if you don't have `make` command?
+
+- `chmod +x start.docker.sh`
+- `start.docker.sh`
+
+## Technical detailed instructions
 ### Configuration
 
 - Edit `.env` file for environment variables.
@@ -20,6 +31,7 @@ The nginx server will be available at 8080 port for serving request
 
 - SSH into the app container: `make ssh`
 - Generate new key: `make ssh`, then `php artisan key:generate`
+- App logs checking: `make logs` or `docker-compose logs -f app`
 
 ### Unit testing
 
@@ -105,3 +117,20 @@ curl --request GET 'http://127.0.0.1:8080/wagers?page=<page>&limit=<limit>' \
 
 - `<page>`: the current page (offset)
 - `<limit>`: the number of records to be returned
+
+## Stop containers
+
+- `make stop`
+
+or
+- `docker-compose stop`
+
+## Teardown
+
+- `make down`
+
+or
+- `docker-compose down`
+
+For cleaning everything:
+- `docker system prune -af`
